@@ -1,0 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); 
+
+@font-face {
+   font-family: Bebas-Book;
+   src: url(../../assets/fonts/bebasneue-book-webfont.woff);
+}
+
+
+/*disble arrow inputs*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.timer__elipse1 {
+   border-radius:50%;
+   background-image: radial-gradient(circle, #434347, #17171A);
+   min-height: 400px;
+   min-width: 400px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.timer {
+   font-family: Bebas-Book;
+   font-size: 11rem;
+   color:whitesmoke
+
+}
+
+.timer input {
+   background-color: transparent;
+   color: whitesmoke;
+   border: none;
+   width:10rem;
+   font-family: Bebas-Book;
+   font-size: 12rem; 
+   text-align: center;
+}
+
+.timer input:focus {
+   outline: none;
+}
+
+.startstop{
+   background: transparent;
+   font-family: 'Montserrat', sans-serif;
+   color: whitesmoke;
+   border: none;
+   font-size:  1.3rem;
+}
+
