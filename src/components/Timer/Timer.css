@@ -13,11 +13,17 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
+.container {
+   box-shadow: 8px 8px 300px 25px rgba(142, 133, 133, 0.3);
+   border-radius: 50%;
+}
+
 .timer__elipse1 {
    border-radius:50%;
-   background-image: radial-gradient(circle, #434347, #17171A);
-   min-height: 400px;
-   min-width: 400px;
+   
+   /*background-image: radial-gradient(circle, #626266, #17171A);*/
+   min-height: 500px;
+   min-width: 500px;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -27,8 +33,8 @@ input::-webkit-inner-spin-button {
 .timer {
    font-family: Bebas-Book;
    font-size: 11rem;
-   color:whitesmoke
-
+   color:whitesmoke;
+   box-shadow: 12px rgba(88, 11, 11, 0.7);
 }
 
 .timer input {
@@ -51,5 +57,11 @@ input::-webkit-inner-spin-button {
    color: whitesmoke;
    border: none;
    font-size:  1.3rem;
+}
+
+.modal-text{
+   font-family: 'Monstserrat', sans-serif;
+   color: rgba(88, 11, 11, 0.7);
+   font-size: 1.3rem;
 }
 
