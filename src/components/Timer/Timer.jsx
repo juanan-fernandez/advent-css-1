@@ -52,7 +52,6 @@ const Timer = () => {
 		const forward =
 			Math.ceil(((totalSeconds.current - secsPending) / totalSeconds.current) * 100) *
 			1.1;
-		console.log(forward);
 		setProgressValue(forward);
 	};
 
