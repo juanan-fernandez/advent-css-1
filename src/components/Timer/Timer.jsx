@@ -6,8 +6,6 @@ import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-pro
 import 'react-circular-progressbar/dist/styles.css';
 
 const Timer = () => {
-	const [minutes, setMinutes] = useState(0);
-	const [seconds, setSeconds] = useState(0);
 	const [start, setStart] = useState(false);
 	const tick = useRef();
 	const firstRender = useRef(true);
@@ -37,7 +35,6 @@ const Timer = () => {
 	}, [start]);
 
 	const getTime = () => {
-		//setSeconds(seconds => seconds - 1);
 		secondsRef.current.value = format2Digits(Number(secondsRef.current.value) - 1);
 		if (Number(secondsRef.current.value) <= 0) {
 			if (Number(minutesRef.current.value) === 0) {
@@ -48,8 +45,6 @@ const Timer = () => {
 				return;
 			}
 			minutesRef.current.value = format2Digits(Number(minutesRef.current.value) - 1);
-			//setMinutes(minutes => minutes - 1);
-			//setSeconds(59);
 			secondsRef.current.value = 59;
 		}
 		const secsPending =
@@ -57,11 +52,15 @@ const Timer = () => {
 		const forward =
 			Math.ceil(((totalSeconds.current - secsPending) / totalSeconds.current) * 100) *
 			1.1;
+		console.log(forward);
 		setProgressValue(forward);
 	};
 
 	const updateStartStop = () => {
-		setStart(!start);
+		// totalSeconds.current =
+		// 	1 + Number(secondsRef.current.value) + Number(minutesRef.current.value) * 60;
+		// transition.current = totalSeconds.current / 10;
+		setStart(val => !val);
 	};
 
 	const format2Digits = myNumber => ('0' + myNumber).slice(-2);
@@ -74,14 +73,14 @@ const Timer = () => {
 
 	const handleChangeMinutes = function (ev) {
 		reset();
-		//setMinutes(+ev.target.value);
-		totalSeconds.current = 1 + seconds + Number(ev.target.value) * 60;
+		totalSeconds.current =
+			Number(secondsRef.current.value) + Number(ev.target.value) * 60;
 		transition.current = totalSeconds.current / 10;
 	};
 	const handleChangeSeconds = function (ev) {
 		reset();
-		//setSeconds(+ev.target.value);
-		totalSeconds.current = 1 + Number(ev.target.value) + minutes * 60;
+		totalSeconds.current =
+			Number(ev.target.value) + Number(minutesRef.current.value) * 60;
 		transition.current = totalSeconds.current / 10;
 	};
 
